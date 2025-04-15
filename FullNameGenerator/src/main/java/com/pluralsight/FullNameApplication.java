@@ -2,9 +2,6 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class FullNameApplication {
-    public static void main(String[] args) {
-        userInput();
-    }
 
         public static void userInput() {
             Scanner read = new Scanner(System.in);
