@@ -3,9 +3,10 @@ import java.util.Scanner;
 
 public class Parser {
     public static void parseName() {
+
         Scanner read = new Scanner(System.in);
 
-        System.out.println("Enter your name (first last OR first middle last): ");
+        System.out.println("Enter your name (first last OR first middle last):\t");
         String name = read.nextLine();
         name = name.trim();
 
@@ -21,7 +22,7 @@ public class Parser {
             System.out.println("Middle Name: " + parts[1]);
             System.out.println("Last Name: " + parts[2]);
         }else {
-            System.out.println("Invalid input. Please enter either 'first last' OR 'first middle last'.");
+            System.out.println("Invalid input. Please enter either first last OR first middle last.");
         }
     }
 }
