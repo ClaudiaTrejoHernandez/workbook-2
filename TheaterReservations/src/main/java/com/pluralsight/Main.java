@@ -7,7 +7,7 @@ public class Main {
 
     public static Scanner read = new Scanner(System.in);
 
-    public static  void main(String[] args) {
+    public static void main(String[] args) {
 
 
 //        //Create string with your birthday
