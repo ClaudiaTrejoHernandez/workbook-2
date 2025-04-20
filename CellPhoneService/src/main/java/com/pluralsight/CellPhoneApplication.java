@@ -10,10 +10,16 @@ public class CellPhoneApplication{
 
         //Exercise 1: 1st instance of a cell:
         CellPhone cell1 = new CellPhone();
+
         //Exercise 2: 2nd instance of a cell:
         CellPhone strangerPhone = new CellPhone();
         //Calling the StrangerPhone method from CellPhone class:
         strangerPhone.StrangerPhone();
+
+        //Exercise 3: 3rd instance of a cell:
+        CellPhone cell3 = new CellPhone(1234, "iPhone 8", "Verizon", "(111)000-0000", "Sam");
+
+
 
         System.out.println("Enter the cell serial number: ");
         int serialNumber = read.nextInt();
@@ -38,6 +44,8 @@ public class CellPhoneApplication{
 
         display(cell1);
         display(strangerPhone);
+        //Exercise 3: calling the display () method of the new cell3
+        display(cell3);
 
         System.out.println("-----------------------------\n ");
 

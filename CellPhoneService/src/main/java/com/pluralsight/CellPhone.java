@@ -17,7 +17,15 @@ package com.pluralsight;
         this.carrier = "";
         this.phoneNumber = "";
         this.owner = "";
+    }
 
+    //Exercise 3: STEP 1
+    public CellPhone(int serialNumber, String model, String carrier, String phoneNumber, String owner) {
+        this.serialNumber = serialNumber;
+        this.model = model;
+        this.carrier = carrier;
+        this.phoneNumber = phoneNumber;
+        this.owner = owner;
     }
 
     public void StrangerPhone(){
