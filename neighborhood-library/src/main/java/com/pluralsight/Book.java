@@ -8,16 +8,18 @@ public class Book {
     private int id;
     private String isbn;
     private String title;
-    private boolean isCheckedOut = false;
-    private String checkedOutTo = " ";
+    private boolean isCheckedOut;
+    private String checkedOutTo;
+
+
 
     //Overloaded constructor used to initialize objects in main; no return type (allows flexible object creation)
-    public Book(int id, String isbn, String title, boolean isCheckedOut, String checkedOutTo) {
+    public Book(int id, String isbn, String title) {
         this.id = id;
         this.isbn = isbn;
         this.title = title;
-        this.isCheckedOut = isCheckedOut;
-        this.checkedOutTo = checkedOutTo;
+        this.isCheckedOut = false;
+        this.checkedOutTo = " ";
 
     }
 
@@ -25,70 +27,47 @@ public class Book {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getIsbn() {
         return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public boolean isCheckedOut() {
         return isCheckedOut;
-    }
-
-    public void setCheckedOut(boolean checkedOut) {
-        isCheckedOut = checkedOut;
     }
 
     public String getCheckedOutTo() {
         return checkedOutTo;
     }
 
-    public void setCheckedOutTo(String checkedOutTo) {
-        this.checkedOutTo = checkedOutTo;
+    //Methods:
+    public void checkOut(String name) {
+        isCheckedOut = true;
+        checkedOutTo = name;
+    }
+
+    public void checkIn() {
+        isCheckedOut = false;
+        checkedOutTo = " ";
     }
 
     //Instance Method (not static) for displaying individual book information
-    public void displayBookInfo(int number){
-        System.out.println("----------------------------------------Book #" + number + ": Available for Check-Out----------------------------------------\n");
-        System.out.println("Book Title: " + this.title);
-        System.out.println("Book ID: " + this.id);
-        System.out.println("Book ISBN: " + this.isbn);
+    //Since not static, no use of this.title, this.id, etc..
+    public void displayBookInfo(int bookNumber){
+        System.out.println("----------------------------------------Book #" + bookNumber + ": Available for Check-Out----------------------------------------\n");
+        System.out.println("Book Title: " + title);
+        System.out.println("Book ID: " + id);
+        System.out.println("Book ISBN: " + isbn + "\n");
 
     }
 
-    //Methods: show available books
-    public static void showAvailableBooks(List<Book> availableBooks) {
-        for (int i = 0; i < availableBooks.size(); i++) {
 
-            availableBooks.get(i).displayBookInfo(i + 1);
-        }
-    }
-
-    //Methods: showCheckOut(name)
-    public void checkingOutName(Book[] library, int bookCounter) {
-        boolean found = false;
-
-        for (int i = 0; i < bookCounter; i++){
-            String borrower = library[i].getCheckedOutTo() + " ";
-        }
-
-    }
-
-    //Methods: checkingInName
-//    public void dropOff();
+//    //instance methods... they need to create an instance of a book
+//    public void ThisMethodBelongsToABook() {
+//        System.out.println("I have to create an instance of a book to show a particular title, for this instance its this titel: " + this.title );
+//    }
 
 }
